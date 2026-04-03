@@ -2,7 +2,7 @@
 
 MERN Stack Full-Stack Developer Portfolio is a modern, visually appealing web application designed to showcase projects, skills, and professional details. Built using the MERN stack, it features a sleek dark glassmorphism UI, smooth animations, and dynamic content integration to create a strong developer presence online.
 
-🚀 Key Features
+🚀 Key Features :
 
 ✨ Modern Developer Portfolio: Clean and professional design to showcase skills, projects, and experience.
 🎨 Glassmorphism UI: Dark-themed interface with elegant glass effects and smooth transitions.
@@ -12,17 +12,17 @@ MERN Stack Full-Stack Developer Portfolio is a modern, visually appealing web ap
 📱 Responsive Design: Optimized for mobile, tablet, and desktop devices.
 
 🛠️ Technology Stack
-Frontend:
+Frontend :
 
 ⚛️ React (Vite): Fast and modern frontend framework
 🎨 Tailwind CSS: Utility-first styling for responsive design
 🎞️ Framer Motion: Smooth animations and transitions
 
-Backend:
+Backend :
 
 🟢 Node.js & Express.js: Server-side logic and API handling
 
-Database:
+Database :
 
 🍃 MongoDB (Mongoose): Data storage for contact form submissions
 
