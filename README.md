@@ -80,7 +80,11 @@ Projects (if needed)
 
 📸 Screenshots
 
-(Add your portfolio screenshots here for better presentation)
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 
 🌟 Future Enhancements
 
