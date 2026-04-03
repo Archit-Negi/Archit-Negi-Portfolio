@@ -64,20 +64,6 @@ npm run dev
 
 👉 Visit: http://localhost:5173
 
-⚙️ Configuration
-
-To update your personal details:
-
-📁 Open:
-frontend/src/config/data.js
-
-✏️ Modify your:
-
-Name
-Skills
-Social Links
-Projects (if needed)
-
 📸 Screenshots
 
 ![alt text](image.png)
