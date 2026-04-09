@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDocker } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiTypescript, SiPostman, SiVite } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiTypescript, SiPostman, SiVite, SiOpenai } from 'react-icons/si';
 
 export const personalData = {
   name: "Archit Negi",
@@ -23,6 +23,8 @@ export const skills = [
   { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
   { name: "Vite", icon: SiVite, color: "#646CFF" },
   { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  { name: "Git & GitHub", icon: FaGitAlt, color: "#F05032" },
+  { name: "ChatGPT", icon: SiOpenai, color: "#10a37f" },
 ];
 
 export const projects = [
