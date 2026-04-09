@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars as Menu, FaTimes as X } from 'react-icons/fa';
 import { personalData } from '../config/data';
+import logo from '../assets/logo.png';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -25,20 +26,29 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'glass-nav py-4 shadow-lg shadow-black/20' : 'bg-transparent py-6'
+        scrolled ? 'bg-transparent py-4 border-b border-white/5 backdrop-blur-md' : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold tracking-tighter text-primary relative group">
-          {personalData.portfolioName}
-          <span className="text-text">.dev</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        <a href="#home" className="flex items-center gap-3">
+          <img 
+            src={logo} 
+            alt="Negixis Logo" 
+            className="w-14 h-14 object-contain" 
+          />
+          <span className="text-2xl font-bold tracking-tighter text-white">
+            {personalData.portfolioName}<span className="text-primary">.dev</span>
+          </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center border border-white/10 glass px-8 py-2 rounded-full">
+        <nav className="hidden md:flex gap-12 items-center px-12 py-2">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link text-sm uppercase tracking-widest font-semibold">
+            <a 
+              key={link.name} 
+              href={link.href} 
+              className="nav-link text-xs uppercase tracking-[0.2em] font-bold px-4 py-2 rounded-full hover:bg-white/5 transition-all duration-300"
+            >
               {link.name}
             </a>
           ))}
