@@ -20,6 +20,9 @@ function App() {
 
   return (
     <div className="relative w-full min-h-screen bg-background text-text overflow-hidden selection:bg-primary/30 selection:text-white">
+      {/* Global Polish */}
+      <div className="grain-overlay"></div>
+      
       {/* Loading Screen */}
       <AnimatePresence>
         {loading && (

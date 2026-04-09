@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaDownload } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import { personalData } from '../config/data';
+
+const Magnetic = ({ children }) => {
+  const ref = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.3, y: middleY * 0.3 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const { x, y } = position;
+  return (
+    <motion.div
+      style={{ position: "relative" }}
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x, y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const Hero = () => {
   return (
@@ -11,7 +42,8 @@ const Hero = () => {
         {/* Animated Greeting Pill */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="glass px-6 py-2 rounded-full mb-8 border-primary/30 flex items-center gap-3"
         >
@@ -26,11 +58,12 @@ const Hero = () => {
         <motion.h1 
           className="text-5xl md:text-7xl lg:text-8xl font-black font-sans text-white mb-6 tracking-tighter leading-tight"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           Building Digital <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-purple-400">
+          <span className="animate-shiny text-transparent bg-clip-text">
             Experiences
           </span>
         </motion.h1>
@@ -39,7 +72,8 @@ const Hero = () => {
         <motion.p 
           className="text-xl md:text-2xl text-text/90 mb-8 max-w-2xl font-light"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           Hi, I'm <span className="text-white font-semibold">{personalData.name}</span>, a {" "}
@@ -50,16 +84,19 @@ const Hero = () => {
         <motion.div 
           className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <a 
-            href="#projects" 
-            className="group relative px-8 py-4 rounded-full bg-primary text-background font-bold flex items-center justify-center gap-3 hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(102,252,241,0.4)]"
-          >
-            View My Projects 
-            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          <Magnetic>
+            <a 
+              href="#projects" 
+              className="group relative px-8 py-4 rounded-full bg-primary text-background font-bold flex items-center justify-center gap-3 hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(102,252,241,0.4)]"
+            >
+              View My Projects 
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Magnetic>
           <a 
             href="#contact" 
             className="px-8 py-4 rounded-full glass border border-white/10 text-white font-bold flex items-center justify-center gap-3 hover:bg-white/5 transition-all duration-300 hover:scale-105"

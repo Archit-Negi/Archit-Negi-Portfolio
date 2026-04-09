@@ -52,3 +52,49 @@ body {
 .nav-link:hover::after {
   @apply w-full;
 }
+/* Custom Grain Texture Animation */
+@keyframes noise {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(-10%, 5%); }
+  30% { transform: translate(5%, -10%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-10%, 5%); }
+  60% { transform: translate(15%, 0); }
+  70% { transform: translate(0, 10%); }
+  80% { transform: translate(-15%, 0); }
+  90% { transform: translate(10%, 5%); }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(120%) brightness(100%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 50;
+  animation: noise 3s steps(10) infinite;
+}
+
+/* Shiny Text Animation */
+@keyframes shiny {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shiny {
+  background: linear-gradient(
+    to right,
+    rgba(102, 252, 241, 1) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(102, 252, 241, 1) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shiny 3s linear infinite;
+}
