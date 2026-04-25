@@ -29,19 +29,27 @@ export const skills = [
 
 export const projects = [
   {
-    title: "AlumBridge",
+    title: "AlumBridge : Alumni-Student Networking Platform",
     description: "A comprehensive Alumni-Student Interaction Platform designed to bridge the gap between graduates and current students. Features a referral system, admin/student/alumni dashboards, and real-time networking.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/Archit-Negi-Portfolio/projects/alumbridge.png",
     tags: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/Archit-Negi",
     demo: "#"
   },
   {
-    title: "AI Student Attendance System",
+    title: "AutoAttend : AI Student Attendance System",
     description: "An automated attendance management solution utilizing AI for seamless tracking. Built to handle large data sets and provide insightful analytics for educational institutions.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/Archit-Negi-Portfolio/projects/autoattend.png",
     tags: ["MERN Stack", "Python", "AI/ML", "REST APIs"],
     github: "https://github.com/Archit-Negi",
+    demo: "#"
+  },
+  {
+    title: "CPU Scheduling and Memory Management Simulator",
+    description: "A comprehensive, industry-grade web-based platform designed to visualize and analyze the complex interplay between CPU scheduling and memory management. Features integrated OS emulation, dynamic scheduling suite (FCFS, SJF, Round Robin), and real-time fragmentation visualization with a modern glassmorphic UI.",
+    image: "/Archit-Negi-Portfolio/projects/cpu_scheduler.png",
+    tags: ["Python", "Flask", "JavaScript", "OS Algorithms"],
+    github: "https://github.com/Archit-Negi/Advanced-OS-Scheduling-Memory-Emulator",
     demo: "#"
   }
 ];
