@@ -4,17 +4,42 @@ import { socialLinks } from '../config/data';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // For now, prevent default and show a mock success behavior
-    console.log("Form Data Submitted:", formData);
-    alert("Thanks for reaching out! This is a UI demo, so no actual email was sent right now.");
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Use environment variable or fallback to localhost
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:10000/api/contact';
+      
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Thanks for reaching out! Your message has been sent.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission Error:", err);
+      alert("Failed to connect to the server. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -122,9 +147,10 @@ const Contact = () => {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-primary text-background font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-white hover:scale-[1.02] transition-all duration-300"
+                disabled={isSubmitting}
+                className={`w-full bg-primary text-background font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-white hover:scale-[1.02] transition-all duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
