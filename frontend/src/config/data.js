@@ -31,7 +31,7 @@ export const projects = [
   {
     title: "AlumBridge : Alumni-Student Networking Platform",
     description: "A comprehensive Alumni-Student Interaction Platform designed to bridge the gap between graduates and current students. Features a referral system, admin/student/alumni dashboards, and real-time networking.",
-    image: "/Archit-Negi-Portfolio/projects/alumbridge.png",
+    image: "/projects/alumbridge.png",
     tags: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/Archit-Negi",
     demo: "#"
@@ -39,7 +39,7 @@ export const projects = [
   {
     title: "AutoAttend : AI Student Attendance System",
     description: "An automated attendance management solution utilizing AI for seamless tracking. Built to handle large data sets and provide insightful analytics for educational institutions.",
-    image: "/Archit-Negi-Portfolio/projects/autoattend.png",
+    image: "/projects/autoattend.png",
     tags: ["MERN Stack", "Python", "AI/ML", "REST APIs"],
     github: "https://github.com/Archit-Negi",
     demo: "#"
@@ -47,7 +47,7 @@ export const projects = [
   {
     title: "CPU Scheduling and Memory Management Simulator",
     description: "A comprehensive, industry-grade web-based platform designed to visualize and analyze the complex interplay between CPU scheduling and memory management. Features integrated OS emulation, dynamic scheduling suite (FCFS, SJF, Round Robin), and real-time fragmentation visualization with a modern glassmorphic UI.",
-    image: "/Archit-Negi-Portfolio/projects/cpu_scheduler.png",
+    image: "/projects/cpu_scheduler.png",
     tags: ["Python", "Flask", "JavaScript", "OS Algorithms"],
     github: "https://github.com/Archit-Negi/Advanced-OS-Scheduling-Memory-Emulator",
     demo: "#"
